@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem; /*16 px e denk gelicek */
+    color: #333;
+}
+
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+}
+p{
+    margin: 1rem 0;
+}
+
+img{
+    width: 100%;
+}
+
+.text-center{
+    text-align: center;
+}
+/*temel ayarlar bitis*/
+
+
+/* navbar */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark);
+    opacity: 0.8;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height:70px;
+    padding: 0 3rem;
+
+}
+.navbar a{
+    color: #fff;
+    padding: 1rem 2rem;
+    margin: 0 .5rem;
+}
+
+.navbar a:hover{
+    border-bottom: 2px solid var(--warning);
+}
+
+.navbar ul{
+    display: flex;
+    
+}
+
+.navbar .logo{
+    font-weight: 400;
+}
+
+.navbar h1{
+    font-size: 3rem;
+}
+
+/* header */
+
+.main-header{
+    background-image: url('../img/bg-1.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    
+}
+
+/* main heaader a saydam bi tabaka verdik */
+.main-header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0, 0, 0.6);
+}
+
+/* main header a saydam tabaka verdigimiz icin icerikler altta kaldi onlari ustte cikardik */
+.main-header *{
+    z-index: 1;
+}
+
+.main-header .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   height: 100%;  /* yuzde yaptim bu sayede icinde bulundugu containerin boyutu kadar tyer kaplicak */
+}
+
+.main-header .content h1{
+    font-size: 5.5rem;
+}
+.main-header .content p{
+    font-size:2.3rem;
+  max-width:60rem; /* yazi alta alinsin diye verdik */
+  margin: 2rem 0 3rem;
+}
+
+/* icons */
+.icons{
+    padding: 30px;
+}
+
+.icons h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.icons i{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 2rem;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+/* about */
+.about{
+    color: #fff;
+}
+.about h2{
+    font-size: 4rem;
+    font-weight: 400;
+}
+.about p{
+    margin:2rem 0;
+}
+
+.about .column{
+    height: 600px;
+}
+
+/* gallery */
+.gallery img:hover{
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+/* rooms */
+
+.rooms .card-body{
+    padding: 2rem;
+    margin-top: -5px;
+}
+
+.rooms .card-body h2{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.rooms .card-body p{
+    color: #fff;
+    margin: 2rem 0;
+}
+
+/* teams */
+
+.teamss img{
+    border-radius: 50%;
+    width: 60%;
+}
+
+.teamss img:hover{
+    opacity: 0.7;
+}
+
+
+/* contact */
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 0;
+    
+}
+
+.contact-form label{
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.contact-form .form-control{
+    margin-bottom:1.5rem;
+}
+
+.contact-form input{
+    width: 100%;
+    padding: 5px;
+    height: 60px;
+    border: 1px solid #f5f5f5;
+}
+
+.contact-form button{
+    
+    margin-top: 20px;
+    
+}
+
+.contact h2{
+    font-size: 4rem;
+}
+
+/* footer */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.footer a{
+    color: var(--danger);
+}
+
+.footer a:hover{
+    opacity: 0.7;
+}
+.footer  a{
+    margin-right: 20px;
+}
+
+
+/* responsive */
+
+@media(max-width:768px){
+    .navbar{
+        flex-direction: column;
+        height: 60px;
+        padding: 10px 0;
+        z-index: 3;
+        
+    }
+    .about .column{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar h1{
+        font-size: 2rem;
+    }
+    .navbar a{
+        padding: 4px;
+        margin: 0 3px;
+    }
+
+    .teamss img{
+        width: 30%;
+    }
+}
+
+.contact .column-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    
+}
